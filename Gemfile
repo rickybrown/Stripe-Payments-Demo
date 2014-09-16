@@ -3,6 +3,7 @@ ruby '2.1.2'
 
 gem 'devise'
 gem 'pg'
+gem 'figaro'
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'simple_form'
 gem 'autoprefixer-rails'
