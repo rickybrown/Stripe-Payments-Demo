@@ -1,0 +1,25 @@
+.register-page {
+	background:white;
+	width:540px;
+	margin: 0 auto;
+	text-align:center;
+	background:rgba(0,0,0,0.4);
+	padding:10px 20px 30px 20px;
+	border-radius:20px;
+	border:2px solid white;
+	overflow:auto;
+	& h1, h2 {
+		font-weight:100;
+	}
+	& .field {
+		margin:5px 0;
+	}
+	& .short-input {
+		width:calc(100% - 80px);
+	}
+	& .demo-account {
+		font-weight:100;
+		font-size:16px;
+		color:white;
+	}
+}

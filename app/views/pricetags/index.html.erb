@@ -1,0 +1,21 @@
+<div class="pricetag-table">
+	<h3>Listing Pricetags</h3><a>(Click to edit)</a>
+	<br><br>
+	<table class="table">
+		<thead>
+			<th>Amount (in cents)</th>
+			<th>Description</th>
+			<th>Delete</th>
+		</thead>
+	<% @pricetags.each do |pricetag| %>
+		<tbody>
+			<tr>
+				<td><%= link_to "#{pricetag.amount}&nbsp;&nbsp;Cents".html_safe, edit_pricetag_path(pricetag) %></td>
+	  		<td><%= link_to pricetag.description, edit_pricetag_path(pricetag) %></td>
+				<td><%= link_to 'Delete', pricetag, method: :delete, data: { confirm: 'Delete Pricetag?' }, class: 'btn-sm btn-default' %></td>
+			</tr>
+		</tbody>
+	<% end %>
+</table>
+<%= link_to 'Create New Pricetag', new_pricetag_path, class: 'btn btn-default' %>
+</div>

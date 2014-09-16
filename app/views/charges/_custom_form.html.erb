@@ -1,0 +1,35 @@
+<div class="donation-option">
+	<a>Custom Amount<br>(in dollars and cents)</a> 
+	<div class="input-group pad">
+  	<span class="input-group-addon">$</span>
+		<%= text_field_tag 'amount', nil, id: 'custom_amount', class: 'form-control', placeholder: 'Ex: 25.00' %>
+	</div>
+	<%= f.button :submit, disabled: true, class: 'hide' %>
+	<%= link_to 'Make Donation', '#', id: 'pricetag_custom',
+	    class: 'btn btn-warning form-control' %>
+</div>
+
+<script>
+$('#pricetag_custom').click(function(){
+  var token = function(token, args){
+    var $input = $('<input type=hidden name=stripeToken />').val(token.id);
+		$('#charge_amount').val($('#custom_amount').val() * 100);
+		$('#charge_description').val('Donation');
+		$('#charge_email').val(token.email);
+    $('form').append($input).submit();
+  };
+	var amount = ($('#custom_amount').val() * 100);
+  StripeCheckout.open({
+    key:         '<%= STRIPE_PUBLIC_KEY %>',
+    address:     false,
+    amount:      amount,
+    currency:    'usd',
+    name:        'The Nations Group',
+    description: 'Donation',
+    panelLabel:  'Donate',
+		email:       '<%= current_user ? current_user.email : '' %>',
+    token:       token
+  });
+  return false;
+});
+</script>

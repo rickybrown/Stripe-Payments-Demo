@@ -1,0 +1,10 @@
+<%= simple_form_for @pricetag do |f| %>
+  <%= f.error_notification %>
+	<div class="input-group">
+	  <span class="input-group-addon">$</span>
+	  <%= f.text_field :amount, class: 'form-control', placeholder: 'Amount (ex: 25.00)' %>
+	</div><br>
+	<%= f.text_field :description, class: 'form-control', placeholder: 'Description (ex: $25 Payment)' %><br>
+	<%= link_to 'Go Back', root_path, class: 'btn btn-default' %>
+	<%= f.button :submit, "Save", class: 'btn btn-warning' %>
+<% end %>

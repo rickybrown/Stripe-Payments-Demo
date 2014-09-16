@@ -1,0 +1,24 @@
+<script>  
+var count =3  
+var redirect="<%= sow_path %>"
+  
+function countDown(){  
+ if (count <=0){  
+  window.location = redirect;  
+ }else{  
+  count--;  
+  document.getElementById("timer").innerHTML = "This page will redirect in "+count+" seconds."  
+  setTimeout("countDown()", 1000)  
+ }  
+}  
+</script>  
+
+<div class="thanks">
+  Thank you for sowing into The Nations Group!
+</div>
+
+<span id="timer" style="display:none;">  
+<script>  
+ countDown();  
+</script>  
+</span>  

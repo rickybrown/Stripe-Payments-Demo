@@ -1,0 +1,16 @@
+<h2>Sign in</h2>
+
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div class="input-group field">
+    <span class="input-group-addon"><%= glyph('user') %></span>
+    <%= f.email_field :email, placeholder: 'Email', autofocus: true, class: 'form-control' %>
+  </div>
+  <div class="input-group field">
+    <span class="input-group-addon"><%= glyph('lock') %></span>
+    <%= f.password_field :password, placeholder: 'Password', autocomplete: "off", class: 'form-control' %>
+  </div>
+  <div>
+		<%= f.submit "Sign in", class: 'btn btn-warning pull-left' %>
+		<%= link_to "Forgot your password?", new_password_path(resource_name), class: 'btn btn-default pull-right' %> 
+	</div>
+<% end %>

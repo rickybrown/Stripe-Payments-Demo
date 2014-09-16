@@ -1,0 +1,19 @@
+.credit-card {
+	background: #555;
+	border-radius:10px;
+	padding:10px;
+	max-width:640px;
+	margin:0 auto;
+	font-size:18px;
+	color:white;
+	& .number {
+		background:orange;
+		padding:0 5px;
+	}
+	& .security-code {
+		padding:0 20px;
+	}
+	& .expiration {
+
+	}
+}

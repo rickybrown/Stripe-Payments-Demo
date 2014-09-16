@@ -1,0 +1,26 @@
+<div class="navbar-header">
+  <%= link_to 'Stripe Payments Demo', root_path, class: 'navbar-brand' %>
+</div>
+<ul class="nav navbar-nav navbar-right">
+  <li class="dropdown">
+		<% if current_user %>
+			<%= link_to '#', class: 'dropdown-toggle', data: { toggle: 'dropdown' } do %>
+			  <%= current_user.email %> <%= glyph('cog') %>
+			<% end %>
+		<% else %>
+			<%= link_to glyph('cog'), '#', class: 'dropdown-toggle', data: { toggle: 'dropdown' } %>
+		<% end %>
+    <ul class="dropdown-menu" role="menu">
+	  <% if current_user %>
+        <li><%= link_to 'Edit Account', edit_user_registration_path %></li>
+				<li><%= link_to 'Sign out now', destroy_user_session_path, method: :delete %></li>
+	  <% else %>
+        <li><%= link_to 'Sign in/Sign up', register_path %></li>
+	  <% end %>
+ 	  <li class="divider"></li>
+      <li><%= link_to 'Change Pricetags', pricetags_path %></li>
+    </ul>
+  </li>
+</ul>
+
+      

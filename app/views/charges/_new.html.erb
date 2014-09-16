@@ -1,0 +1,45 @@
+<%= simple_form_for @charge do |f| %>
+  <%= f.hidden_field :amount, value: nil %>
+	<%= f.hidden_field :description, value: nil %>
+	<%= f.hidden_field :email, value: nil %>
+	<% @pricetags.each do |pricetag| %>
+		<div id="pricetag_<%=pricetag.id%>" class="pricetag-option">
+			$<%= pricetag.amount / 100 %><br><span class="details">Make Payment</span>
+		</div>
+		
+	  <script>
+    $('#pricetag_<%=pricetag.id%>').click(function(){
+      var token = function(token, args){
+        var $input = $('<input type=hidden name=stripeToken />').val(token.id);
+				$('#charge_amount').val('<%= pricetag.amount %>');
+				$('#charge_description').val('<%= pricetag.description %>');
+				$('#charge_email').val(token.email);
+        $('form').append($input).submit();
+      };
+      StripeCheckout.open({
+        key:         '<%= STRIPE_PUBLIC_KEY %>',
+        address:     false,
+        amount:      '<%= pricetag.amount %>',
+        currency:    'usd',
+        name:        'Stripe Payments Demo',
+        description: '<%= pricetag.description %>',
+        panelLabel:  'Pay',
+		    email:       '<%= current_user ? current_user.email : '' %>',
+        token:       token
+      });
+      return false;
+    });
+	  </script> 
+		
+	<% end %>
+	<%= render 'charges/custom_form', f: f %>
+<% end %>
+
+
+
+	
+
+
+	
+
+	

@@ -1,0 +1,122 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+.navbar {
+	background:#eee!important;
+	text-align:center;
+}
+.navbar-nav > li > a {
+	line-height:50px;
+	padding:0 10px;
+	font-size:16px;
+	color:#000;
+	&:hover {
+		background:transparent;
+	}
+}
+body {
+	background:black url(http://subtlepatterns.com/patterns/tactile_noise.png);
+	padding-top:100px;
+	color:#ddd;
+}
+a, a:link, a:hover, a:focus, a:active, a:visited {
+	color:#ddd;
+	font-weight:200;
+	outline:none;
+	text-decoration:none;
+}
+h3 { font-weight:300; }
+.pad { padding:10px 0; }
+.fifty { width:calc(50% - 5px); }
+.btn-default {
+	color:#555!important;
+	font-size:14px;
+}
+.nav-custom {
+	height:5px; width:100%;
+	background:url('border.png');
+	position:fixed;
+	top:50px;
+}
+.module-container {
+	width:100%;
+	text-align:center;
+	margin-top:50px;
+}
+.module {
+	height:250px;
+	width:250px;
+	margin:15px;
+	border-radius:50px;
+	display:inline-block;
+	border:2px solid #555;
+	font-size:36px;
+	color:#eee;
+	line-height:250px;
+	font-weight:100;
+}
+.pricetags {
+	text-align:center;
+}
+.pricetags-container {
+	width:800px;
+	margin:0 auto;
+	text-align:center;
+	background:rgba(0,0,0,0.4);
+	padding:20px 20px 45px 20px;
+	border-radius:20px;
+	border:2px solid white;
+}
+.pricetag-option, .donation-option {
+	display:inline-block;
+	vertical-align: top;
+	*display: inline;
+	*zoom: 1;
+	height:150px;
+	width:150px;
+	background:#000;
+	border:2px solid #444;
+	margin:5px;
+	border-radius:10px;
+	cursor:pointer;
+}
+.donation-option {
+	padding:7px;
+}
+.pricetag-option {
+	font-size:48px;
+	line-height:140px;
+	font-weight: 300;
+	position:relative;
+}
+.custom-pricetag-option {
+	padding:10px;
+	font-size:14px;
+}
+#pricetag_form_container {
+	width:275px;
+	margin:0 auto;
+	background:#555;
+	border-radius:20px;
+	padding:20px;
+	white-space:nowrap;
+}
+.pricetag-table {
+	width:350px;
+	margin:0 auto;
+	background:#555;
+	border-radius:20px;
+	padding:5px 0 20px 0;
+}
+.table > thead > tr > th {
+	text-align:center;
+	font-weight:400;
+}
+.details {
+	font-size:12px;
+	position:absolute;
+	top:60px; right:0; left:0;
+}
+.tiny {
+	font-size:12px;
+}
