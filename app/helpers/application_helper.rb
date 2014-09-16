@@ -1,6 +1,6 @@
 module ApplicationHelper
 	def glyph(icon)
-		"<span class='glyphicon glyphicon-#{icon}' style='font-size:24px;'></span>".html_safe
+		"<span class='glyphicon glyphicon-#{icon}'></span>".html_safe
 	end
   def resource_name
     :user
